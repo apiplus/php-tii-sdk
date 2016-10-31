@@ -1,0 +1,21 @@
+<?php
+$e = $this->getError();
+if (Tii_Config::isDebugMode()) {
+	$trace = $e->getTrace();
+
+	$result = 'Exception: "';
+	$result .= $e->getMessage();
+	$result .= '" @ ';
+	if ($trace[0]['class'] != '') {
+		$result .= $trace[0]['class'];
+		$result .= '->';
+	}
+	$result .= $trace[0]['function'];
+	$result .= '();<br />';
+	$result .= '<pre>' . $e->getTraceAsString() . '</pre>';
+	echo $result;
+} else {
+	echo $e->getMessage();
+}
+
+?>
