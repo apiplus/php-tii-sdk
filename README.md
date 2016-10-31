@@ -1,2 +1,2 @@
-# php-tii-sdk-
+# php-tii-sdk
 php-tii-sdk  
